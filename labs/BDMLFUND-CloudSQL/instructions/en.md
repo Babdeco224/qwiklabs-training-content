@@ -1,3 +1,5 @@
+## This exercise is done 
+
 # Setup Rentals Data in Cloud SQL
 
 ## Overview
@@ -55,14 +57,14 @@ To explore the lab code in Cloud Shell:
     | Table Name | Columns |
     |---|---|
     | Accommodation | Id, title, location, price, rooms, rating, type |
-    | ________________? | ________________? |
-    | ________________? | ________________? |
+    | Rating        | userId,accoId,rating                            |
+    | Recommendation| userId; accoId, prediction                      |
 
     How do these relate to the rentals recommendation scenario? Fill the following blanks:
 
-    * When a user rates a house (giving it four stars for example), an entry is added to the ________________ table.
-    * General information about houses, such as the number of rooms they have and their average rating is stored in the ________________ table.
-    * The job of the recommendation engine is to fill out the ________________ table for each user and house: this is the predicted rating of that house by that user.
+    * When a user rates a house (giving it four stars for example), an entry is added to the __________Rating______ table.
+    * General information about houses, such as the number of rooms they have and their average rating is stored in the _______Accommodation_________ table.
+    * The job of the recommendation engine is to fill out the _____Recommandation___ table for each user and house: this is the predicted rating of that house by that user.
 
 5. Examine the data files using __head__:
 
@@ -203,6 +205,19 @@ Stage the table definition and data files into Cloud Storage, so that you can la
 
     ```
     select * from Accommodation where type = 'castle' and price < 1500;
+
+mysql> select * from Accommodation where type = 'castle' and price < 1500;
++----+--------------------------+--------------+-------+-------+--------+--------+
+| id | title                    | location     | price | rooms | rating | type   |
++----+--------------------------+--------------+-------+-------+--------+--------+
+| 14 | Colossal Peaceful Palace | Melbourne    |  1200 |    21 |    1.5 | castle |
+| 15 | Vast Private Fort        | London       |  1300 |    18 |    2.6 | castle |
+| 26 | Enormous Peaceful Palace | Paris        |  1300 |    18 |    1.1 | castle |
+| 31 | Colossal Private Castle  | Buenos Aires |  1400 |    15 |    3.3 | castle |
+| 45 | Vast Quiet Chateau       | Tokyo        |  1100 |    19 |    2.3 | castle |
++----+--------------------------+--------------+-------+-------+--------+--------+
+5 rows in set (0.00 sec)
+
     ```
 
     All the cheap castles are rated poorly.
