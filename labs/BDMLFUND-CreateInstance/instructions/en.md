@@ -21,15 +21,30 @@ In this lab, you spin up a virtual machine, configure its API access, and log in
 
 To create a Compute Engine instance:
 
-1. In the GCP Console, on the __Navigation menu__ (![8ab244f9cffa6198.png](img/mainmenu.png)), click __Compute Engine__.
+1. In the GCP Console, on the __Navigation menu__ (![8ab244f9cffa6198.png](img/mainmenu.png)), click __Compute Engine__ Or tape __Compute Engine__ in the __Search Bar__.
 
 2. Click __Create__ and wait for a form to load. You will need to change some options on the form that comes up.
 
-3. For __Name__, leave the default value, for __Region__, select __us-central1__, and for __Zone__, select __us-central1-a__.
+3. For __Name__, I choosed __my-vm-1__, for __Region__, I select __europe-west1__, and for __Zone__, select __europe-west1-b__.
 
 4. For __Identity and API access__, in __Access scopes__, select __Allow full access to all Cloud APIs__:
 
     ![8ab244f9cffa6198.png](img/8ab244f9cffa6198.png)
+    
+    You can click on __Ligne de commande équivalant (fr)__ or __.Command Line Equivalent__.
+    ```
+    gcloud compute instances create my-vm-1 \ 
+    --project=gcp-labs-318508 \
+    --zone=europe-west1-b \
+    --machine-type=e2-medium \
+    --network-interface=network-tier=PREMIUM,subnet=boni1 \
+    --maintenance-policy=MIGRATE \
+    --service-account=427881976472-compute@developer.gserviceaccount.com \
+    --scopes=https://www.googleapis.com/auth/cloud-platform \
+    --create-disk=auto-delete=yes,boot=yes,device-name=my-vm-1,\
+    image=projects/debian-cloud/global/images/debian-9-stretch-v20220317,mode=rw,size=10,\
+    type=projects/gcp-labs-318508/zones/europe-west1-b/diskTypes/pd-balanced --reservation-affinity=any
+    ```
 
 5. Click __Create__.
 
