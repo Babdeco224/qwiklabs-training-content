@@ -84,7 +84,7 @@ Ensure that you are at the Cloud Shell command prompt.
 
     You may see messages about "Create Application". Keep refreshing the page periodically until the application is deployed.
 
-3. View the application on the Internet. The URL for your application is ```https://PROJECT_ID.appspot.com/``` where `PROJECT_ID` represents your Google Cloud Platform project name. This URL is listed in two places:
+3. View the application on the Internet. The URL for your application is ```https://PROJECT_ID.appspot.com/``` where `PROJECT_ID`  `future-enigma-334711 ` represents your Google Cloud Platform project name. This URL is listed in two places:
 
     * The output of the `deploy` command: ```Deployed service [default] to [https://PROJECT_ID.appspot.com]```
     * The upper-right pane of the App Engine Dashboard
