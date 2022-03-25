@@ -76,6 +76,7 @@ When the instance is created, you can remotely access your Compute Engine instan
 
     ```bash
     git --version
+    git version 2.20.1
     ```
 
 3. On the command-line, type:
@@ -108,6 +109,8 @@ When the instance is created, you can remotely access your Compute Engine instan
 
     ```bash
     bash ingest.sh
+    
+    2022-03-25 14:42:46 (1.13 MB/s) - ‘earthquakes.csv’ saved [397322]
     ```
 
 7. Verify that some data has been downloaded:
@@ -153,7 +156,7 @@ Create a bucket using the GCP console:
 
 2. Click __Create Bucket__.
 
-3. For __Name__, enter your __Project ID__, then click __Create__. To find your __Project ID__, click the project in the top menu of the GCP Console and copy the value under __ID__ for your selected project.
+3. For __Name__, enter your __Project ID__ __future-enigma-33471__, then click __Create__. To find your __Project ID__, click the project in the top menu of the GCP Console and copy the value under __ID__ for your selected project.
 
     Note the name of your bucket. For the rest of this lab, replace `<YOUR-BUCKET>` with your bucket name.
 
@@ -167,6 +170,9 @@ To store the original and transformed data in Cloud Storage
 
     ```bash
     gsutil cp earthquakes.* gs://<YOUR-BUCKET>/earthquakes/
+    gsutil cp earthquakes.* gs://future-enigma-33471/earthquakes/  => allow us to copy all our earthquakes files in the objects called __earthquakes__ in our bucket
+    
+    
     ```
 
 2. In the GCP Console, click the bucket name and notice there are three new files present in the __earthquakes__ folder (click __Refresh__ if necessary).
@@ -177,6 +183,7 @@ To store the original and transformed data in Cloud Storage
 
  ```bash
  gsutil acl ch -u AllUsers:R gs://<YOUR-BUCKET>/earthquakes/*
+ gsutil acl ch -u AllUsers:R gs://future-enigma-33471/earthquakes/*
  ```
 
  From the GCP console, navigate to your cloud storage bucket (click __refresh__ if necessary).
