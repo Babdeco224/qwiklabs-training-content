@@ -46,17 +46,17 @@ Click _Check my progress_ to verify the objective.
 
     Your completed command will look like this:
     ```
-    gcloud compute zones list | grep us-central1
+    gcloud compute zones list | grep europe-west1
     ```
 
-3. Choose a zone from that list other than the zone to which Qwiklabs assigned you. For example, if Qwiklabs assigned you to region ```us-central1``` and zone ```us-central1-a``` you might choose zone ```us-central1-b```.
+3. Choose a zone from that list: In my case I chosed  ```europe-west1```.
 
 4. To set your default zone to the one you just chose, enter this partial command ```gcloud config set compute/zone``` followed by the zone you chose.
 
     Your completed command will look like this:
 
     ```
-    gcloud config set compute/zone us-central1-b
+    gcloud config set compute/zone europe-west1-b
     ```
 
 5. To create a VM instance called __my-vm-2__ in that zone, execute this command:
@@ -128,6 +128,7 @@ Click _Check my progress_ to verify the objective.
 
     ```
     Hi from YOUR_NAME
+    Hi from Bony
     ```
 
 9. Press __Ctrl+O__ and then press __Enter__ to save your edited file, and then press __Ctrl+X__ to exit the nano text editor.
