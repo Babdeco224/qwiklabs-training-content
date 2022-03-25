@@ -184,6 +184,9 @@ To store the original and transformed data in Cloud Storage
  ```bash
  gsutil acl ch -u AllUsers:R gs://<YOUR-BUCKET>/earthquakes/*
  gsutil acl ch -u AllUsers:R gs://future-enigma-33471/earthquakes/*
+ Ask Nicolas for this exception
+CommandException: Failed to set acl for gs://future-enigma-33471/earthquakes/earthquakes.csv. Please ensure you have OWNER-role access to this resource.
+
  ```
 
  From the GCP console, navigate to your cloud storage bucket (click __refresh__ if necessary).
