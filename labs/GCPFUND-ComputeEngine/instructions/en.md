@@ -21,7 +21,7 @@ In this lab, you will learn how to perform the following tasks:
 1. In the __Navigation menu__ (![Navigation menu](img/menu.png)), click __Compute Engine__ \> __VM instances__.
 2. Click __Create__.
 3. On the __Create an Instance__ page, for __Name__, type ```my-vm-1```
-4. For __Region__ and __Zone__, select the region and zone assigned by Qwiklabs.
+4. For __Region__ and __Zone__, I select the __europe-west1__ region .
 5. For __Machine type__, accept the default.
 6. For __Boot disk__, if the __Image__ shown is not __Debian GNU/Linux 9 (stretch)__, click __Change__ and select __Debian GNU/Linux 9 (stretch)__.
 7. Leave the defaults for Identity and API access unmodified.
