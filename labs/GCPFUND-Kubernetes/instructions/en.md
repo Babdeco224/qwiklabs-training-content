@@ -41,13 +41,25 @@ If either API is missing, click __Enable APIs and Services__ at the top. Search 
     followed by the zone that Qwiklabs assigned to you. Your complete command will look like this:
 
     ```
-    export MY_ZONE=us-central1-a
+    export MY_ZONE=europe-west1-b
     ```
 
-3. Start a Kubernetes cluster managed by Kubernetes Engine. Name the cluster __webfrontend__  and configure it to run 2 nodes:
+3. Start a Kubernetes cluster managed by Kubernetes Engine. Name the cluster __webfrontend__  and configure it to run 3 nodes:
 
     ```
-    gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 2
+    gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 3
+    ```
+    This command works only if we have a default network, otherwise you'll have this king of error
+    
+    ``` 
+     Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. 
+     To create advanced routes based clusters, please pass the `--no-enable-ip-alias` flag 
+     Note: Your Pod address range (`--cluster-ipv4-cidr`) can accommodate at most 1008 node(s).
+    ERROR: (gcloud.container.clusters.create) ResponseError: code=400, message=Project "gcp-labs-318508" has no network named "default".
+    ```
+    To solve this error, just add the nework and the subnetwork like this :
+    ```
+      gcloud container clusters create webfrontend --zone $MY_ZONE --network boni-test --subnetwork boni1 --num-nodes 3
     ```
 
     It takes several minutes to create a cluster as Kubernetes Engine provisions virtual machines for you.
