@@ -49,7 +49,7 @@ If either API is missing, click __Enable APIs and Services__ at the top. Search 
     ```
     gcloud container clusters create webfrontend --zone $MY_ZONE --num-nodes 3
     ```
-    This command works only if we have a default network, otherwise you'll have this king of error
+    This command works only if we have a default network, otherwise you'll have this kind of error
     
     ``` 
      Default change: VPC-native is the default mode during cluster creation for versions greater than 1.21.0-gke.1500. 
